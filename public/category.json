@@ -1,7 +1,7 @@
 [
     {
         "category_name": "Cook Ware",
-        "category_id": 1,
+        "category_id": "01",
         "product_name": "Cooking Pan",
         "isVerified": false,
         "image": "https://m.media-amazon.com/images/I/61LuQDLNKVL._AC_SL1500_.jpg",
@@ -18,7 +18,7 @@
     },
     {
         "category_name": "Cook Ware",
-        "category_id": 2,
+        "category_id": "01",
         "product_name": "Grill Pan",
         "isVerified": false,
         "image": "https://assets.epicurious.com/photos/57684c0de047a6cf1ee826ad/16:9/w_2560%2Cc_limit/how-to-use-a-grill-pan-indoors-06202016.jpg",
@@ -36,7 +36,7 @@
     },
     {
         "category_name": "Cook Ware",
-        "category_id": 1,
+        "category_id": "01",
         "product_name": "Stockpots & Multi Cookers",
         "isVerified": false,
         "image": "https://m.media-amazon.com/images/I/61WrxsGK1LL.jpg",
@@ -54,7 +54,7 @@
     },
     {
         "category_name": "Cook Tools",
-        "category_id": 2,
+        "category_id": "02",
         "product_name": "Natural Wood Cooking Spoon",
         "isVerified": false,
         "image": "https://cdn.shopify.com/s/files/1/2428/3177/products/Olive_Wood_kitchen_utensil_large_cooking_spoon_olive_wood_gift_by_MR_OLIVEWOOD_1024x1024.jpg?v=1556448810",
@@ -72,7 +72,7 @@
     },
     {
         "category_name": "Cook Tools",
-        "category_id": 2,
+        "category_id": "02",
         "product_name": "Natural wood Paddle Board",
         "isVerified": false,
         "image": "https://i5.walmartimages.com/asr/56d5f103-08d2-4a0a-82db-12debfd3d42e_1.1cbb19124d15ae7d738a59bcee2ccaaf.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
@@ -90,7 +90,7 @@
     },
     {
         "category_name": "Cook Tools",
-        "category_id": 2,
+        "category_id": "02",
         "product_name": "Wood Honey Deeper",
         "isVerified": false,
         "image": "https://img.freepik.com/premium-vector/honey-dipper-empty-stick-wooden-spoon-pure-tool-3d-realistic-vector_87720-6256.jpg?w=2000",
@@ -108,7 +108,7 @@
     },
     {
         "category_name": "Electrics",
-        "category_id": 3,
+        "category_id": "03",
         "product_name": "Blender",
         "isVerified": false,
         "image": "https://www.proctorsilex.com/media/hub-products/53560-02.jpg",
@@ -126,7 +126,7 @@
     },
     {
         "category_name": "Electrics",
-        "category_id": 3,
+        "category_id": "03",
         "product_name": "Multi Cooker",
         "isVerified": false,
         "image": "https://gettoeasy.com.bd/public/uploads/all/9db9hzzvhe2CKksCRWPScQxh9yuWC2nFo54AolcV.jpg",
@@ -144,7 +144,7 @@
     },
     {
         "category_name": "Electrics",
-        "category_id": 1,
+        "category_id": "03",
         "product_name": "Waffle maker",
         "isVerified": false,
         "image": "https://static-01.daraz.com.bd/p/fe24c5b7fb537d4474197508195a9086.jpg",
