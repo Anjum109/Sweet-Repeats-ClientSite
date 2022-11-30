@@ -31,7 +31,7 @@ const Login = () => {
                 setLoginUserEmail(email)
                 // toast.success('Login Successfully');
                 // form.reset();
-
+                navigate('/');
             })
             .catch(err => console.error(err));
 

@@ -82,7 +82,7 @@ const SignUp = () => {
             .then(data => {
                 setCreateUserEmail(email);
                 // setUserEmail(email)
-                // getToken(email)
+                getToken(email)
             })
     }
 

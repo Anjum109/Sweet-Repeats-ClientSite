@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 const BookNow = ({ data, user, setData }) => {
     console.log(user);
-    const { location, product_name, resale_price, image } = data;
+    const { location, product_name, resale_price, image, _id } = data;
     const handleSubmit = event => {
         event.preventDefault()
         const form = event.target;
@@ -21,7 +21,8 @@ const BookNow = ({ data, user, setData }) => {
             names,
             phone,
             title,
-            image: data.image
+            image: data.image,
+            productId: _id
         }
         console.log(booking);
 

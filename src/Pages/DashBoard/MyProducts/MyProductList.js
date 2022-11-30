@@ -25,6 +25,7 @@ const MyProductList = ({ category, handleDelete }) => {
                         <h2 className="card-title">Original Price: <strong>{original_price}$</strong></h2>
                         <h2 className="card-title">Reseal Price: <strong> {resale_price}$</strong></h2>
                         <p>{description}</p>
+
                         <div className="card-actions justify-end">
 
                             <label
@@ -34,6 +35,9 @@ const MyProductList = ({ category, handleDelete }) => {
                             <label
                                 htmlFor="booking-modal"
                                 className="btn bg-red-900 text-white mt-5 w-full">Make Advertisement </label>
+                        </div>
+                        <div className='text-center mt-3 bg-gray-800 text-white p-5 mx-12 mb-12'>
+                            <p>{!category?.soldstatus ? <h1 className="text-xl font-semibold">Avaiable</h1> : <h1 className="text-xl font-semibold">Sold</h1>}</p>
                         </div>
                     </div>
                 </div>

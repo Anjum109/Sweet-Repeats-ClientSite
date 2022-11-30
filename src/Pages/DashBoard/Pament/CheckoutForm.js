@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 const CheckoutForm = ({ booking }) => {
     const [cardError, setCardError] = useState('');
@@ -10,7 +11,7 @@ const CheckoutForm = ({ booking }) => {
 
     const stripe = useStripe();
     const elements = useElements();
-    const { price, email, names, _id } = booking;
+    const { price, email, names, _id, productId } = booking;
 
     useEffect(() => {
 
@@ -92,6 +93,7 @@ const CheckoutForm = ({ booking }) => {
                     if (data.insertedId) {
                         setSuccess('Congrats! your payment completed');
                         setTransactionId(paymentIntent.id);
+                        handleSoldStatus(productId)
                     }
                 })
         }
@@ -99,6 +101,21 @@ const CheckoutForm = ({ booking }) => {
 
 
     }
+
+
+    const handleSoldStatus = (id) => {
+        fetch(`https://furniture-reseal-server-side.vercel.app/product/${id}`, {
+            method: "PUT",
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+
+                if (data.modifiedCount > 0) {
+                    toast.success("Product Sold Successfully");
+                }
+            });
+    };
 
     return (
         <>
