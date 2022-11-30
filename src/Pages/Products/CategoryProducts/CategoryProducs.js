@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const CategoryProducs = ({ product, setData }) => {
 
 
-    const { description, gender, image, location, original_price, posted_time, product_company_name, product_name, rating, resale_price, seller_name, years_of_use } = product;
+    const { description, gender, image, location, original_price, posted_time, condition_type, product_name, rating, resale_price, seller_name, years_of_use } = product;
     return (
         <div>
             <div className="flex flex-col mb-5 ml-5 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -18,6 +18,7 @@ const CategoryProducs = ({ product, setData }) => {
                     <div className="flex flex-col space-y-1">
                         <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">Sellar Name:{seller_name}</a>
                         <span className="text-xm dark:text-gray-400">Post Time: {posted_time}</span>
+                        <span className="text-xm dark:text-gray-400">Condition Type: {condition_type}</span>
                         <span className=" text-xm dark:text-gray-400">Use: {years_of_use} Years</span>
                         <span className=" text-xm dark:text-gray-400">Location: {location}</span>
                     </div>

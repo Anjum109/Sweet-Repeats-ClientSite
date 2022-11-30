@@ -3,7 +3,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const MyProductList = ({ category }) => {
 
-    const { _id, description, image, location, original_price, posted_time, product_name, resale_price, seller_name, years_of_use } = category;
+    const { _id, description, condition_type, image, location, original_price, posted_time, product_name, resale_price, seller_name, years_of_use } = category;
 
     const { loading } = useContext(AuthContext)
 
@@ -29,9 +29,10 @@ const MyProductList = ({ category }) => {
                     <img alt="" src={image} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                     <div className="flex flex-col space-y-1">
                         <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">Sellar Name:{seller_name}</a>
-                        <span className="text-xm dark:text-gray-400">Model Name: {product_name}</span>
-                        <span className="text-xm dark:text-gray-400">Post Time: {posted_time}</span>
+                        <span className="text-xm dark:text-gray-400">Product Name: {product_name}</span>
+                        <span className="text-xm dark:text-gray-400">Posted Time: {posted_time}</span>
                         <span className=" text-xm dark:text-gray-400">Use: {years_of_use} Years</span>
+                        <span className=" text-xm dark:text-gray-400">condition type: {condition_type} </span>
                         <span className=" text-xm dark:text-gray-400">Location: {location}</span>
                     </div>
                 </div>

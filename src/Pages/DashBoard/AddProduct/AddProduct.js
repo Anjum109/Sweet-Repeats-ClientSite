@@ -23,6 +23,8 @@ const AddProduct = () => {
         const resale_price = form.resale_price.value;
         const years_of_use = form.years_of_use.value;
         const seller_name = form.seller_name.value;
+        const posted_time = form.posted_time.value;
+        const condition_type = form.condition_type.value;
         const location = form.location.value;
         const description = form.description.value;
 
@@ -39,6 +41,7 @@ const AddProduct = () => {
             location,
             description,
             posted_time,
+            condition_type,
             email: user.email
         }
 
@@ -56,7 +59,7 @@ const AddProduct = () => {
                 if (data.acknowledged) {
                     toast.success('Product Add confirm')
                     form.reset();
-
+                    navigate('/dashboard/myproducts')
                 }
                 else {
                     toast.error(data.message)
@@ -75,14 +78,14 @@ const AddProduct = () => {
     return (
         <div>
             <div className='mb-6'>
-                <h2 className='text-4xl text-center text-orange-500 font-bold my-4'>Add Products</h2>
+                <h2 className='text-4xl text-center font-bold my-4'>Add Products</h2>
                 <div className='flex justify-center items-center'>
-                    <div className='w-96 bg-gray-800 rounded-md p-7'>
+                    <div className='w-96 rounded-md p-7'>
                         <form onSubmit={handleAddToCard}>
 
                             <select name='category_name' className="select select-sm select-bordered w-full max-w-xs my-2">
-                                <option disabled selected>Category</option>
-                                <option value="Cook Ware">Cook Ware</option>
+
+                                <option disabled selected value="Cook Ware">Cook Ware</option>
                                 <option value="Cook Tools">Cook Tools</option>
                                 <option value="Electrics">Electrics</option>
 
@@ -93,6 +96,14 @@ const AddProduct = () => {
                             <input type="text" name='resale_price' placeholder="ResalePrice" className="input input-sm input-bordered w-full max-w-xs" />
                             <input type="text" name='years_of_use' placeholder="Year Of Use" className=" my-2 input input-sm input-bordered w-full max-w-xs" />
                             <input type="text" name='seller_name' placeholder="Seller Name" className="input input-sm input-bordered w-full max-w-xs" />
+                            <input type="text" name='posted_time' placeholder="posted_time" className="input input-sm input-bordered w-full max-w-xs" />
+                            <select name='condition_type' className="select select-sm select-bordered w-full max-w-xs my-2">
+
+                                <option disabled selected value="Good">Good</option>
+                                <option value="Best">Best</option>
+                                <option value="Excellent">Excellent</option>
+
+                            </select>
                             <input type="text" name='location' placeholder="location" className=" my-2 input input-sm input-bordered w-full max-w-xs" />
                             <textarea name='description' className="textarea textarea-bordered " cols="42" rows="4" placeholder="description"></textarea>
                             <input type="submit" className='w-full btn bg-gray-600' value="Submit" />
