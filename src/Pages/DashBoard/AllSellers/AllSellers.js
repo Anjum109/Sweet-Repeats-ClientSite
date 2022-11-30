@@ -34,20 +34,20 @@ const AllSellers = () => {
 
     const handleMakeSeller = id => {
         console.log('done');
-        // fetch(`https://sweet-repeates-server.vercel.app/users/Seller/${id}`, {
-        //     method: "PUT",
+        fetch(`https://sweet-repeates-server.vercel.app/users/Seller/${id}`, {
+            method: "PUT",
 
-        //     headers: {
-        //         authorization: `bearer ${localStorage.getItem('accessToken')}`
-        //     }
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.modifiedCount > 0) {
-        //             toast.success("Seller verified Successfully")
-        //             refetch();
-        //         }
-        //     })
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success("Seller verified Successfully")
+                    refetch();
+                }
+            })
 
     }
 

@@ -1,18 +1,18 @@
 # Sweet Repeats
 
 
-Live Site Link: 
-Client Site Github Link:
-Server Site Github Link:
+Live Site Link: https://sweet-repeats.web.app/
+Client Site Github Link: https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-Anjum109
+Server Site Github Link: https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-Anjum109
 
 Admin Email: adcd@gmail.com
-Admin Password:123456
+Admin Password: 123456
 
-Seller Email:
-Seller Password:
+Seller Email: anjum12@gmail.com
+Seller Password: AB12##
 
-Buyer Email:
-Buyer Password:
+Buyer Email: user@gmail.com
+Buyer Password: 123456
 
 Details About Project:
 
