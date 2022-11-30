@@ -14,7 +14,7 @@ Seller Password: AB12##
 Buyer Email: user@gmail.com
 Buyer Password: 123456
 
-Details About Project:
+Details About Sweet Resale Project:
 
 * This website have 3 part. Admin,Seller and Buyer.
 * By logged in admin can see all sellers and buyer list. and if admin want he admin can remove and buyer or seller from the list.
