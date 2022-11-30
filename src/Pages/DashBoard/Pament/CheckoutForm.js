@@ -120,7 +120,7 @@ const CheckoutForm = ({ booking }) => {
                     }}
                 />
                 <button
-                    className='btn btn-sm mt-4 btn-primary'
+                    className='text-white w-full mt-4 bg-red-900 p-3 text-1xl rounded-lg'
                     type="submit"
                     disabled={!stripe || !clientSecret || processing}>
                     Pay
@@ -129,7 +129,7 @@ const CheckoutForm = ({ booking }) => {
             <p className="text-red-500">{cardError}</p>
             {
                 success && <div>
-                    <p className='text-green-500'>{success}</p>
+                    <p className='text-green-500 text-1xl mt-5'>{success}</p>
                     <p>Your transactionId: <span className='font-bold'>{transactionId}</span></p>
                 </div>
             }

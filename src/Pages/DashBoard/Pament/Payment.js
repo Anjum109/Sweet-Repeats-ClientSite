@@ -13,10 +13,10 @@ const Payment = () => {
     const { title, price } = booking;
     return (
         <div>
-            <h3 className='text-3xl m-5'>Payment for {title}</h3>
-            <p className="text-xl m-5">Please pay <strong>{price}$</strong></p>
+            <h3 className='text-3xl m-5 bg-red-800 p-5 text-center mt-16 text-white'>Payment for {title}</h3>
+            <p className="text-4xl  m-6 text-center">Please pay <strong>{price}$</strong></p>
 
-            <div className='w-96 my-12'>
+            <div className='w-96 my-12 mx-12'>
                 <Elements
                     stripe={stripePromise}
                 >

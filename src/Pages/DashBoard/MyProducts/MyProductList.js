@@ -18,37 +18,34 @@ const MyProductList = ({ category }) => {
     }
     return (
 
-        <div>
-            <div className="flex flex-col mb-5 ml-5 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+        <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 my-12 mx-12'>
+            <div className="card card-compact w-96 bg-base-100 shadow-xl h-full">
+                <figure><img src={image} alt="" /></figure>
+                <div className="card-body">
+                    <h2 className="card-title text-center"><strong>{product_name}</strong></h2>
+                    <h2 className="card-title">Seller Name:{seller_name}</h2>
+                    <h2 className="card-title">Post Time: {posted_time}</h2>
+                    <h2 className="card-title">Condition: {condition_type}</h2>
+                    <h2 className="card-title">Year Of Use:{years_of_use}</h2>
+                    <h2 className="card-title">Location: {location}</h2>
+                    <h2 className="card-title">Original Price: <strong>{original_price}$</strong></h2>
+                    <h2 className="card-title">Reseal Price: <strong> {resale_price}$</strong></h2>
+                    <p>{description}</p>
+                    <div className="card-actions justify-end">
 
-                <div>
-                    <img src={image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
-                    <p className="text-sm dark:text-gray-400">{description}</p>
-                </div>
-                <div className="flex space-x-4">
-                    <img alt="" src={image} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
-                    <div className="flex flex-col space-y-1">
-                        <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">Sellar Name:{seller_name}</a>
-                        <span className="text-xm dark:text-gray-400">Product Name: {product_name}</span>
-                        <span className="text-xm dark:text-gray-400">Posted Time: {posted_time}</span>
-                        <span className=" text-xm dark:text-gray-400">Use: {years_of_use} Years</span>
-                        <span className=" text-xm dark:text-gray-400">condition type: {condition_type} </span>
-                        <span className=" text-xm dark:text-gray-400">Location: {location}</span>
+                        <label
+                            onClick={() => handleDelete(_id)}
+                            htmlFor="booking-modal"
+                            className="btn bg-red-900 text-white w-full">Book now  </label>
                     </div>
-                </div>
-                <div className="flex flex-wrap justify-between">
-
-                    <div className="flex space-x-2 text-sm dark:text-gray-400">
-                        <span className='text-xm'>OriginalPirce:{original_price}</span>
-                        <span className='text-xm'>ResalePirce: {resale_price}</span>
-
-                    </div>
-                </div>
-                <div className='text-center'>
-                    <button className='btn w-60 font-bold mt-3' onClick={() => handleDelete(_id)}>Delete</button>
                 </div>
             </div>
-        </div >
+
+            {/* <div className='text-center'>
+                    <button className='btn w-60 font-bold mt-3' >Delete</button>
+                </div> */}
+        </div>
+
     );
 };
 
