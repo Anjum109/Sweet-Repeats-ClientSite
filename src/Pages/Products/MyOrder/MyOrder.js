@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
@@ -7,12 +8,22 @@ const MyOrder = () => {
     const [order, setOrder] = useState([])
     const { user } = useContext(AuthContext)
 
+    // const { data: myorder = [], refetch } = useQuery({
+    //     queryKey: ['allsellers'],
+    //     queryFn: async () => {
+    //         const res = await fetch('https://sweet-repeates-server.vercel.app/myproduct');
+    //         const data = await res.json();
+    //         return data;
+    //     }
+    // });
+
     useEffect(() => {
         fetch(`https://sweet-repeates-server.vercel.app/bookings?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data)
                 console.log(data)
+
             })
     }, [])
     return (

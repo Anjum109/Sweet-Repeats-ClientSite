@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
-import { toast } from 'react-toastify';
+
 import { format } from 'date-fns';
+import toast from 'react-hot-toast';
 
 
 
@@ -57,7 +58,7 @@ const AddProduct = () => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    toast.success('Product Add confirm')
+                    toast.success("added successfully")
                     form.reset();
                     navigate('/dashboard/myproducts')
                 }
