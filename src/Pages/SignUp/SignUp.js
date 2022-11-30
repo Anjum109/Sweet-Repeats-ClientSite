@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 
 import img from '../../assets/images/login/76432196.png'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle.js/useTitle';
 import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
@@ -13,7 +14,7 @@ const SignUp = () => {
     const [passwordError, setPasswordError] = useState("");
     const [success, setSuccess] = useState(false);
     const [token] = useToken(createUserEmail);
-
+    useTitle('Sign Up');
     const navigate = useNavigate();
 
 

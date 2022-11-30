@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import img from '../../assets/images/login/76432196.png'
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import useTitle from "../../hooks/useTitle.js/useTitle";
 import useToken from "../../hooks/useToken";
 
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
     const [loginUserEmail, setLoginUserEmail] = useState('');
     const [token] = useToken(loginUserEmail);
+    useTitle('Login');
 
     if (token) {
         navigate(from, { replace: true });
@@ -77,12 +79,12 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Login" />
+                            <input className="btn bg-red-900 text-white" type="submit" value="Login" />
                         </div>
                     </form>
                     <p className='text-center'>Have an new account <Link className=' font-bold text-orange-500' to={'/signup'}>Registration</Link></p>
-                    <div className="">
-                        <button onClick={handleGoogle} className='btn mt-4 btn-success mx-5'> Google</button>
+                    <div className="ml-12">
+                        <button onClick={handleGoogle} className='btn bg-red-900 text-white mt-4 w-4/6  mx-5'> Google Login</button>
                     </div>
                 </div>
 

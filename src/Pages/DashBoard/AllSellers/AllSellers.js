@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const AllSellers = () => {
 
+    const [verify, setVerify] = useState(false);
     const { data: allsellers = [], refetch } = useQuery({
         queryKey: ['allsellers'],
         queryFn: async () => {
@@ -25,28 +26,29 @@ const AllSellers = () => {
                     console.log(data)
                     if (data.deleteCount > 0) {
                         toast.success("Seller Delete Successfully")
+                        refetch();
                     }
                 })
         }
     }
 
-    // const handleMakeSeller = id => {
-    //     fetch(`http://localhost:5000/users/admin/${id}`, {
-    //         method: "PUT",
+    const handleMakeSeller = id => {
+        fetch(`http://localhost:5000/users/Seller/${id}`, {
+            method: "PUT",
 
-    //         headers: {
-    //             authorization: `bearer ${localStorage.getItem('accessToken')}`
-    //         }
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.deleteCount > 0) {
-    //                 toast.success("Seller Delete Successfully")
-    //                 refetch();
-    //             }
-    //         })
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success("Seller verified Successfully")
+                    refetch();
+                }
+            })
 
-    // }
+    }
 
     return (
         <div className='p-5'>
@@ -68,9 +70,10 @@ const AllSellers = () => {
                                 <th>{i + 1}</th>
                                 <td>{seller.name}</td>
                                 <td>{seller.email}</td>
-                                {/* <td><button
-                                    onclick={() => { handleMakeSeller(seller._id) }}
-                                    className='btn btn-primary'>Make Admin</button></td> */}
+                                <td>
+                                    {!seller.verify ? <button
+                                        onclick={() => { handleMakeSeller(seller._id) }}
+                                        className='btn btn-primary'>Make Verify</button> : "Verified"}</td>
                                 <td>
                                     <button
                                         onClick={() => { handleDeleteSeller(seller._id) }}
