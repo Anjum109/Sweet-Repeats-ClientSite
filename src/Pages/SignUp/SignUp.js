@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import img from '../../assets/images/login/76432196.png'
@@ -8,10 +8,14 @@ import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
 
-    const { createUser, google, updateUser } = useContext(AuthContext)
+    const { createUser, google, updateUser, loading } = useContext(AuthContext)
     const [createUserEmail, setCreateUserEmail] = useState('');
+    const [passwordError, setPasswordError] = useState("");
+    const [success, setSuccess] = useState(false);
     const [token] = useToken(createUserEmail);
+
     const navigate = useNavigate();
+
 
     if (token) {
         navigate('/')
@@ -23,11 +27,32 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const name = form.name.value;
+        const confirm = form.confirm.value;
         const role = form.option.value;
+
+        //password authentication
+        if (password.length < 6) {
+            setPasswordError("Please should be at least 6 characters");
+            return;
+        }
+        if (!/(?=.[!@#$%&^])/.test(password)) {
+            setPasswordError("Please add at least one special character");
+            return;
+        }
+        if (password !== confirm) {
+            setPasswordError("password and confirm password did not match");
+            return;
+        }
+        setPasswordError("");
+
+
+
+
+
         createUser(email, password, name, role)
             .then(result => {
                 const user = result.user
-
+                setSuccess(true);
                 const userInfo = {
                     displayName: name
                 }
@@ -60,7 +85,9 @@ const SignUp = () => {
             })
     }
 
-
+    if (loading) {
+        return <button className="btn btn-square loading" animation='border' variant='primary' />
+    }
     const handleGoogle = () => {
         google()
             .then(result => {
@@ -132,8 +159,23 @@ const SignUp = () => {
                             <input type="text" name='password' placeholder="password" className="input input-bordered" required />
 
                         </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Confirm Password</span>
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="Confirm Password"
+                                name="confirm"
+                                className="input input-bordered"
+                            />
+                        </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Sign Up" />
+                            <p className="text-purple-800">{passwordError}</p>
+                            {success && (
+                                <p className="text-success text-2xl">User created successfully</p>
+                            )}
+                            <button className="btn border-t-orange-900 text-white">SignIn</button>
                         </div>
                     </form>
                     <p className='text-center'>All ready have an account <Link to={'/login'} className=' font-bold text-orange-500'>Login</Link></p>
