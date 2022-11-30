@@ -1,4 +1,4 @@
-# Sweet Repeats
+# Project Name: Sweet Repeats
 
 
 Live Site Link: https://sweet-repeats.web.app/
