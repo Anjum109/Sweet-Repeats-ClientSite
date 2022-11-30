@@ -1,9 +1,9 @@
-# Project Name: Sweet Repeats
+# Project Name: Sweet Repeats.
 
 
-Live Site Link: https://sweet-repeats.web.app/
-Client Site Github Link: https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-Anjum109
-Server Site Github Link: https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-Anjum109
+* Live Site Link: https://sweet-repeats.web.app/
+* Client Site Github Link: https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-Anjum109
+* Server Site Github Link: https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-Anjum109
 
 Admin Email: adcd@gmail.com
 Admin Password: 123456
