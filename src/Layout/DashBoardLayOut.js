@@ -24,20 +24,20 @@ const DashBoardLayOut = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 text-base-content bg-red-100">
+                    <ul className="menu p-4 w-80 text-base-content bg-red-100 mt-16">
                         {
-                            !isAdmin && !isSeller && <li className='mt-2'><Link to='/dashboard/myorders'>My Orders</Link></li>
+                            !isAdmin && !isSeller && <li className='mt-2 bg-red-900 text-white rounded'><Link to='/dashboard/myorders'>My Orders</Link></li>
                         }
                         {
                             isAdmin && <>
-                                <li className='mt-2'><Link to='/dashboard/allsellers'>All Sellers</Link></li>
-                                <li className='mt-2'><Link to='/dashboard/allbuyers'>All Buyer</Link></li>
+                                <li className='mt-2 bg-red-900 text-white rounded'><Link to='/dashboard/allsellers'>All Sellers</Link></li>
+                                <li className='mt-2 bg-red-900 text-white rounded'><Link to='/dashboard/allbuyers'>All Buyer</Link></li>
                             </>
                         }
                         {
                             isSeller && <>
-                                <li className='mt-2'><Link to='/dashboard/addproducts'>Add a Product</Link></li>
-                                <li className='mt-2'><Link to='/dashboard/myproducts'>My Products</Link></li>
+                                <li className='mt-2 bg-red-900 text-white rounded'><Link to='/dashboard/addproducts'>Add a Product</Link></li>
+                                <li className='mt-2 bg-red-900 text-white rounded'><Link to='/dashboard/myproducts'>My Products</Link></li>
                             </>
                         }
                     </ul>

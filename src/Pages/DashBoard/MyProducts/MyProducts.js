@@ -6,7 +6,7 @@ const MyProducts = () => {
     const { user } = useContext(AuthContext)
     const [myproduct, setMyProduct] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/addproducts?email=${user?.email}`
+        const url = `https://sweet-repeates-server.vercel.app/addproducts?email=${user?.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => {

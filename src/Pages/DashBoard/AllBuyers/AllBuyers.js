@@ -7,7 +7,7 @@ const AllBuyers = () => {
     const { data: allbuyers = [], refetch } = useQuery({
         queryKey: ['allbuyers'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allbuyers');
+            const res = await fetch('https://sweet-repeates-server.vercel.app/allbuyers');
             const data = await res.json();
             return data;
         }
@@ -17,7 +17,7 @@ const AllBuyers = () => {
         console.log(id)
         const proceed = window.confirm("Are you sure, you want to delete this seller?")
         if (proceed) {
-            fetch(`http://localhost:5000/allsellers/${id}`, {
+            fetch(`https://sweet-repeates-server.vercel.app/allsellers/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

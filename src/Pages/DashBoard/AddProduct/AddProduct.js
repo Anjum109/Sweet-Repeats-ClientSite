@@ -46,7 +46,7 @@ const AddProduct = () => {
         }
 
 
-        fetch('http://localhost:5000/category', {
+        fetch('https://sweet-repeates-server.vercel.app/category', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

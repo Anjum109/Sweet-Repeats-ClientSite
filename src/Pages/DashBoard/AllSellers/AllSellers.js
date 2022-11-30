@@ -8,7 +8,7 @@ const AllSellers = () => {
     const { data: allsellers = [], refetch } = useQuery({
         queryKey: ['allsellers'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allsellers');
+            const res = await fetch('https://sweet-repeates-server.vercel.app/allsellers');
             const data = await res.json();
             return data;
         }
@@ -18,7 +18,7 @@ const AllSellers = () => {
         console.log(id)
         const proceed = window.confirm("Are you sure, you want to delete this seller?")
         if (proceed) {
-            fetch(`http://localhost:5000/allsellers/${id}`, {
+            fetch(`https://sweet-repeates-server.vercel.app/allsellers/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -33,20 +33,21 @@ const AllSellers = () => {
     }
 
     const handleMakeSeller = id => {
-        fetch(`http://localhost:5000/users/Seller/${id}`, {
-            method: "PUT",
+        console.log('done');
+        // fetch(`https://sweet-repeates-server.vercel.app/users/Seller/${id}`, {
+        //     method: "PUT",
 
-            headers: {
-                authorization: `bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    toast.success("Seller verified Successfully")
-                    refetch();
-                }
-            })
+        //     headers: {
+        //         authorization: `bearer ${localStorage.getItem('accessToken')}`
+        //     }
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         if (data.modifiedCount > 0) {
+        //             toast.success("Seller verified Successfully")
+        //             refetch();
+        //         }
+        //     })
 
     }
 
@@ -71,13 +72,24 @@ const AllSellers = () => {
                                 <td>{seller.name}</td>
                                 <td>{seller.email}</td>
                                 <td>
+                                    {
+                                        seller.verify = "verified" ? (
+                                            <button className='btn bg-red-900 text-white'> verified</button>
+                                        ) :
+                                            (
+                                                <button onClick={() => handleMakeSeller(seller._id)} className='btn btn-primary'>unverified</button>
+                                            )
+                                    }
+                                </td>
+                                {/* <td>
                                     {!seller.verify ? <button
                                         onclick={() => { handleMakeSeller(seller._id) }}
-                                        className='btn btn-primary'>Make Verify</button> : "Verified"}</td>
+                                        className='btn btn-primary'>Make Verify</button> : "Verified"}
+                                </td> */}
                                 <td>
                                     <button
                                         onClick={() => { handleDeleteSeller(seller._id) }}
-                                        className="btn btn-primary"
+                                        className="btn bg-red-900 text-white"
                                     > Delete Seller
                                     </button>
                                 </td>

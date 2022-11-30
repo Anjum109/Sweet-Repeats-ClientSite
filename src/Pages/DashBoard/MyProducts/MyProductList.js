@@ -8,7 +8,7 @@ const MyProductList = ({ category }) => {
     const { loading } = useContext(AuthContext)
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/addproducts/${id}`
+        const url = `https://sweet-repeates-server.vercel.app/addproducts/${id}`
 
         fetch(url, {
             method: 'DELETE',

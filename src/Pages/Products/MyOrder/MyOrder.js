@@ -8,7 +8,7 @@ const MyOrder = () => {
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+        fetch(`https://sweet-repeates-server.vercel.app/bookings?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data)
