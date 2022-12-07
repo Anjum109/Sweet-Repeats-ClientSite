@@ -38,7 +38,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-red-900 text-white flex justify-between">
+        <div className="navbar bg-zinc-700 text-white flex justify-between">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -1,5 +1,6 @@
 import React from 'react';
 import useTitle from '../../../hooks/useTitle.js/useTitle';
+import Advertise from '../../../Others/Advertise/Advertise';
 import Banner from './Banner/Banner';
 import Categories from './Categories/Categories';
 import DiscountBanner from './DiscountBanner/DiscountBanner';
@@ -11,6 +12,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+            <Advertise></Advertise>
             <Categories></Categories>
             <HomePart2></HomePart2>
             <DiscountBanner></DiscountBanner>

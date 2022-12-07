@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
+
 
 const AllBuyers = () => {
 
@@ -25,7 +26,9 @@ const AllBuyers = () => {
                     console.log(data)
                     if (data.deleteCount > 0) {
                         toast.success("Seller Delete Successfully")
+                        refetch()
                     }
+
                 })
         }
     }

@@ -32,6 +32,7 @@ const DashBoardLayOut = () => {
                             isAdmin && <>
                                 <li className='mt-2 bg-red-900 text-white rounded'><Link to='/dashboard/allsellers'>All Sellers</Link></li>
                                 <li className='mt-2 bg-red-900 text-white rounded'><Link to='/dashboard/allbuyers'>All Buyer</Link></li>
+                                <li className='mt-2 bg-red-900 text-white rounded'><Link to='/dashboard/reportitems'>Report Items</Link></li>
                             </>
                         }
                         {

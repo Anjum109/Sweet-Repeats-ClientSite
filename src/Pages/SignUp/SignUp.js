@@ -19,7 +19,7 @@ const SignUp = () => {
 
 
     if (token) {
-        navigate('/')
+        navigate('/login')
     }
 
     const handleSignup = (event, data) => {

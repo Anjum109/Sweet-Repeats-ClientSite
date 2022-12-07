@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import { AiFillCheckCircle } from 'react-icons/ai';
 
 const AllSellers = () => {
 
@@ -32,23 +33,35 @@ const AllSellers = () => {
         }
     }
 
-    const handleMakeSeller = id => {
-        console.log('done');
-        fetch(`https://sweet-repeates-server.vercel.app/users/Seller/${id}`, {
-            method: "PUT",
+    // const handleMakeSeller = id => {
+    //     console.log('done');
+    //     fetch(`https://sweet-repeates-server.vercel.app/users/Seller/${id}`, {
+    //         method: "PUT",
 
-            headers: {
-                authorization: `bearer ${localStorage.getItem('accessToken')}`
-            }
+    //         headers: {
+    //             authorization: `bearer ${localStorage.getItem('accessToken')}`
+    //         }
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.modifiedCount > 0) {
+    //                 toast.success("Seller verified Successfully")
+    //                 refetch();
+    //             }
+    //         })
+
+    // }
+    const handleVerify = id => {
+        fetch(`https://sweet-repeates-server.vercel.app/allsellers/verify/${id}`, {
+            method: 'PUT',
         })
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    toast.success("Seller verified Successfully")
-                    refetch();
+                    toast.success('Verify Successfully')
+                    refetch()
                 }
             })
-
     }
 
     return (
@@ -72,13 +85,17 @@ const AllSellers = () => {
                                 <td>{seller.name}</td>
                                 <td>{seller.email}</td>
                                 <td>
-                                    {
+                                    {/* {
                                         seller.verify = "verified" ? (
                                             <button className='btn bg-red-900 text-white'> verified</button>
                                         ) :
                                             (
                                                 <button onClick={() => handleMakeSeller(seller._id)} className='btn btn-primary'>unverified</button>
                                             )
+                                    } */}
+                                    {seller?.verify ?
+                                        <td><AiFillCheckCircle className=' text-center text-green-500 mt-2' /> </td> :
+                                        <td>{seller?.role !== 'admin' && <button className='btn btn-xs btn-primary' onClick={() => handleVerify(seller._id)}> Verify </button>}</td>
                                     }
                                 </td>
                                 {/* <td>

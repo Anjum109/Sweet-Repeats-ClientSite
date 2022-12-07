@@ -1,9 +1,24 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const CategoryProducs = ({ product, setData }) => {
 
 
-    const { description, gender, image, location, original_price, posted_time, condition_type, product_name, rating, resale_price, seller_name, years_of_use } = product;
+    const { description, image, location, advertising, original_price, posted_time, condition_type, product_name, resale_price, seller_name, years_of_use, _id } = product;
+
+
+
+    const handleReport = id => {
+        fetch(`https://sweet-repeates-server.vercel.app/reportproduct/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('succefully report done')
+            })
+    }
+
     return (
         <div>
 
@@ -19,12 +34,16 @@ const CategoryProducs = ({ product, setData }) => {
                     <h2 className="card-title">Original Price: <strong>{original_price}$</strong></h2>
                     <h2 className="card-title">Reseal Price: <strong> {resale_price}$</strong></h2>
                     <p>{description}</p>
-                    <div className="card-actions justify-end">
+                    <div className=" flex card-actions justify-end">
 
                         <label
                             onClick={() => setData(product)}
                             htmlFor="booking-modal"
                             className="btn bg-red-900 text-white w-full">Book now  </label>
+                        <label
+                            onClick={() => handleReport(_id)}
+                            htmlFor="booking-modal"
+                            className="btn bg-red-900 text-white w-full">Report</label>
                     </div>
                 </div>
             </div>

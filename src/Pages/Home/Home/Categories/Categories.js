@@ -15,7 +15,7 @@ const Categories = () => {
 
     return (
         <div className='m-12'>
-            <h2 className='m-5 text-center text-2xl lg:text-4xl p-5 text-red-900 bg-red-300'>Categories</h2>
+            <h2 className='m-5 text-center text-2xl lg:text-4xl p-5'>Categories</h2>
             <div className=' grid grid-rows-1 gap-6'>
 
                 {
