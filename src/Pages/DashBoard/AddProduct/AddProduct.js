@@ -84,30 +84,32 @@ const AddProduct = () => {
                     <div className='w-full rounded-md p-12 m-5'>
                         <form onSubmit={handleAddToCard}>
 
-                            <select name='category_name' className="select select-sm select-bordered w-full max-w-xs my-2 mx-5">
+                            <select required name='category_name' className="select select-sm select-bordered w-full max-w-xs my-2 mx-5">
 
                                 <option disabled selected value="Cook Ware">Cook Ware</option>
                                 <option value="Cook Tools">Cook Tools</option>
                                 <option value="Electrics">Electrics</option>
 
                             </select>
-                            <input type="text" name='image' placeholder="Photo Url" className="input input-sm input-bordered w-full mx-5 max-w-xs" />
-                            <input type="text" name='product_name' placeholder="product_name" className="input input-sm input-bordered w-full max-w-xs mx-5 mt-2" />
-                            <input type="text" name='original_price' placeholder="OriginalPrice" className=" my-2 input input-sm input-bordered w-full max-w-xs mx-5" />
-                            <input type="text" name='resale_price' placeholder="ResalePrice" className="input mx-5 input-sm input-bordered w-full max-w-xs" />
-                            <input type="text" name='years_of_use' placeholder="Year Of Use" className="mx-5 my-2 input input-sm input-bordered w-full max-w-xs" />
-                            <input type="text" name='seller_name' placeholder="Seller Name" className="input mx-5 input-sm input-bordered w-full max-w-xs" />
-                            <input type="text" name='posted_time' placeholder="posted_time" className="input mx-5 input-sm input-bordered w-full max-w-xs" />
-                            <select name='condition_type' className="select select-sm select-bordered w-full max-w-xs my-2 mx-5">
+                            <input required type="text" name='image' placeholder="Photo Url" className="input input-sm input-bordered w-full mx-5 max-w-xs" />
+                            <input required type="text" name='product_name' placeholder="product_name" className="input input-sm input-bordered w-full max-w-xs mx-5 mt-2" />
+                            <input required type="text" name='original_price' placeholder="OriginalPrice" className=" my-2 input input-sm input-bordered w-full max-w-xs mx-5" />
+                            <input required type="text" name='resale_price' placeholder="ResalePrice" className="input mx-5 input-sm input-bordered w-full max-w-xs" />
+                            <input required type="text" name='years_of_use' placeholder="Year Of Use" className="mx-5 my-2 input input-sm input-bordered w-full max-w-xs" />
+                            <input required type="text" name='seller_name' placeholder="Seller Name" className="input mx-5 input-sm input-bordered w-full max-w-xs" />
+                            <input required type="text" name='posted_time' placeholder="posted_time" className="input mx-5 input-sm input-bordered w-full max-w-xs" />
+                            <select required name='condition_type' className="select select-sm select-bordered w-full max-w-xs my-2 mx-5">
 
                                 <option disabled selected value="Good">Good</option>
                                 <option value="Best">Best</option>
                                 <option value="Excellent">Excellent</option>
 
                             </select>
-                            <input type="text" name='location' placeholder="location" className=" my-2 input input-sm input-bordered w-full max-w-xs mx-5" />
-                            <textarea name='description' className="textarea textarea-bordered mx-5 " cols="42" rows="4" placeholder="description"></textarea>
-                            <input type="submit" className='w-full bg-red-900 text-white p-4 mt-5' value="Submit" />
+                            <input required type="text" name='location' placeholder="location" className=" my-2 input input-sm input-bordered w-full max-w-xs mx-5" />
+                            <textarea required name='description' className="textarea textarea-bordered mx-5 " cols="42" rows="4" placeholder="description"></textarea>
+                            <div className='flex justify-center'>
+                                <input type="submit" className='w-1/2 border border-red-900 font-bold text-red-900 hover:bg-red-900 hover:text-white hover:p-4 rounded-full p-3 mt-5' value="Submit" />
+                            </div>
                         </form>
                     </div>
                 </div>

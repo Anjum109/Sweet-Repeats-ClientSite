@@ -115,75 +115,79 @@ const SignUp = () => {
 
     return (
         <div>
-            <h1 className="text-white p-5 text-center text-3xl bg-red-800">Create Your Own Account!</h1>
-            <div className="hero my-20">
-                <div className="hero">
-                    <div className="hero-content gap-20 grid md:grid-cols-2 flex-col lg:flex-row">
-                        <div className="text-center lg:text-left ml-12">
-                            <img src={img} alt="" />
-                        </div>
-                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20">
-                            <h1 className='text-5xl text-center font-bold'>Registration</h1>
 
-                            <form onSubmit={handleSignup} className="card-body">
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Name</span>
-                                    </label>
-                                    <input type="text" name='name' placeholder="name" className="input input-bordered" required />
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Email</span>
-                                    </label>
-                                    <input type="email" name='email' placeholder="email" className="input input-bordered" required />
-                                </div>
-                                <div className="col-span-6 sm:col-span-3">
-                                    <label
-                                        htmlFor="FirstName"
-                                        className="block text-sm font-medium text-gray-700"
-                                    >
-                                        Are you seller or buyer?
-                                    </label>
+            <div className="">
+                <div className="">
+                    <div className="">
+                        <div className=''>
+                            <h1 className='text-5xl text-center text-red-900 font-bold mb-12'>Registration</h1>
 
-                                    <select
-                                        name="option"
-                                        className="select select-bordered w-full max-w-xs"
+                            <div className='border border-white shadow-2xl shadow-slate-400  mx-48 '>
+                                <form onSubmit={handleSignup} className="card-body">
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Name</span>
+                                        </label>
+                                        <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Email</span>
+                                        </label>
+                                        <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                    </div>
+                                    <div className="col-span-6 sm:col-span-3">
+                                        <label
+                                            htmlFor="FirstName"
+                                            className="block text-sm font-medium text-gray-700"
+                                        >
+                                            Are you seller or buyer?
+                                        </label>
 
-                                    >
-                                        {/* <option disabled selected>Who shot first?</option> */}
-                                        <option selected value="Buyer">Buyer</option>
-                                        <option value="Seller">Seller</option>
-                                    </select>
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Password</span>
-                                    </label>
-                                    <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+                                        <select
+                                            name="option"
+                                            className="select select-bordered w-full max-w-xs"
 
+                                        >
+                                            {/* <option disabled selected>Who shot first?</option> */}
+                                            <option selected value="Buyer">Buyer</option>
+                                            <option value="Seller">Seller</option>
+                                        </select>
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Password</span>
+                                        </label>
+                                        <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Confirm Password</span>
+                                        </label>
+                                        <input
+                                            type="password"
+                                            placeholder="Confirm Password"
+                                            name="confirm"
+                                            className="input input-bordered"
+                                        />
+                                    </div>
+                                    <div className="form-control mt-6">
+                                        <p className="text-purple-800">{passwordError}</p>
+                                        {success && (
+                                            <p className="text-success text-2xl">User created successfully</p>
+                                        )}
+                                        <div className='flex justify-center'>
+                                            <button className="btn border bg-red-900 border-t-orange-900 w-1/2 text-white">SignIn</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p className='text-center mb-12'>All ready have an account <Link to={'/login'} className=' font-bold text-orange-500'>Login</Link></p>
+                                <div className='flex items-center justify-center'>
+                                    <p onClick={handleGoogle} className='btn border border-white bg-red-900 w-1/2 border-white text-center mb-12 p-5 text-1xl shadow-xl shadow-slate-300'>  Login with Google</p>
                                 </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Confirm Password</span>
-                                    </label>
-                                    <input
-                                        type="password"
-                                        placeholder="Confirm Password"
-                                        name="confirm"
-                                        className="input input-bordered"
-                                    />
-                                </div>
-                                <div className="form-control mt-6">
-                                    <p className="text-purple-800">{passwordError}</p>
-                                    {success && (
-                                        <p className="text-success text-2xl">User created successfully</p>
-                                    )}
-                                    <button className="btn border-t-orange-900 text-white">SignIn</button>
-                                </div>
-                            </form>
-                            <p className='text-center'>All ready have an account <Link to={'/login'} className=' font-bold text-orange-500'>Login</Link></p>
-                            <button onClick={handleGoogle} className='btn mt-4 bg-red-900 text-white mx-5'> Google</button>
+                            </div>
+
 
                         </div>
                     </div>

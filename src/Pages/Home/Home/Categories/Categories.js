@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './categories.css'
 import { Link } from 'react-router-dom';
+import CategoryItem from './CategoryItem';
 
 
 const Categories = () => {
@@ -14,15 +15,15 @@ const Categories = () => {
     }, [])
 
     return (
-        <div className='m-12'>
-            <h2 className='m-5 text-center text-2xl lg:text-4xl p-5'>Categories</h2>
-            <div className=' grid grid-rows-1 gap-6'>
+        <div className='mx-12'>
+            <h2 className='text-center font-bold text-4xl text-red-900 mb-12'>CATEGORIES</h2>
+            <div className=' grid grid-cols-1 lg:grid-cols-3 gap-6'>
 
                 {
-                    categories.map(category => <p className='button-78' key={category._id}
+                    categories.map(category => <CategoryItem key={category._id}
                         category={category}>
-                        <Link to={`/categories/${category._id}`}> {category.category_name}</Link>
-                    </p>)
+
+                    </CategoryItem>)
                 }
 
             </div ></div>

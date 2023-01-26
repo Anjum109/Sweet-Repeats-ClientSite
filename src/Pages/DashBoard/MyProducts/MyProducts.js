@@ -66,6 +66,18 @@ const MyProducts = () => {
 
     return (
         <div>
+            <table className="table w-full">
+                <thead>
+                    <tr>
+
+                        <th>Product Name</th>
+                        <th>Original Price</th>
+                        <th>Resale Price</th>
+                        <th>Location</th>
+                        <th>Delete</th>
+                        <th>Advertise</th>
+                    </tr></thead></table>
+
             {
                 myProduct.map(product => <MyProductList
                     key={product._id}

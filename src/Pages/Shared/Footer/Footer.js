@@ -3,11 +3,11 @@ import image from '../../../assets/images/logo/favicon.png'
 
 const Footer = () => {
     return (
-        <footer className="mt-12 px-4 divide-y bg-stone-600 text-white">
-            <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+        <footer className="mt-12 px-4 py-0 divide-y bg-black text-white">
+            {/* <div className="container flex flex-col justify-between mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 <div className="lg:w-1/3">
                     <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-400">
+                        <div className="flex items-center justify-center w-12 rounded-full dark:bg-violet-400">
                             <img src={image} alt=''></img>
                         </div>
                         <span className="self-center text-2xl font-semibold">Sweet Repeats</span>
@@ -77,7 +77,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="py-6 text-sm text-center dark:text-gray-400">© 1968 Company Co. All rights reserved.</div>
         </footer>
     );

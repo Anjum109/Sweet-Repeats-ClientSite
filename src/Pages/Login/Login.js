@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import img from '../../assets/images/login/76432196.png'
+import img from '../../assets/images/BannerImage/attachment.png'
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import useTitle from "../../hooks/useTitle.js/useTitle";
 import useToken from "../../hooks/useToken";
@@ -56,33 +56,27 @@ const Login = () => {
 
     return (
         <div>
-            <h1 className="text-white p-5 text-center text-3xl bg-red-800">Buy Your Choice! Logged In Here</h1>
-            <div className="hero my-20">
+
+            <div className="hero">
 
                 <div className="hero-content gap-20 grid md:grid-cols-2 flex-col lg:flex-row">
                     <div className="ml-12 text-center lg:text-left">
                         <img src={img} alt="" />
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20">
-                        <h1 className='text-5xl text-center font-bold'>Login Here</h1>
-                        <form onSubmit={handleLogin} className="card-body">
+                    <div className="flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 pb-12">
+
+                        <form onSubmit={handleLogin} className="card-body pt-12">
                             <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered border border-red-900" required />
                             </div>
                             <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
                                 <input type="text" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn bg-red-900 text-white" type="submit" value="Login" />
+                                <input className="btn border border-red-900 hover:bg-red-900 text-red-900 hover:text-white" type="submit" value="Login" />
                             </div>
                         </form>
                         <p className='text-center'>Have an new account <Link className=' font-bold text-orange-500' to={'/signup'}>Registration</Link></p>

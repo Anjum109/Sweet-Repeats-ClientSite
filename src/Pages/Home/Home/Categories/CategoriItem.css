@@ -1,0 +1,8 @@
+.categori-item:hover {
+    background-color: rgba(93, 17, 17, 0.704);
+    color: rgb(72, 4, 4);
+}
+
+.categori-item {
+    color: wheat;
+}

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 import BookNow from '../../Pages/Products/BookNow/BookNow';
+import AdvertiseProductList from '../../Pages/Products/CategoryProducts/AdvertiseProductList';
 import CategoryProducs from '../../Pages/Products/CategoryProducts/CategoryProducs';
 
 
@@ -26,16 +27,16 @@ const Advertise = () => {
         }
     })
     return (
-        <div>
-            <h2 className='text-5xl text-center mt-5 mb-5'>Advertise Products</h2>
-            <div className='grid sm:grid-cols-1 lg:grid-cols-4 md:grid-cols-2   gap-3'>
+        <div className='mt-12'>
+            <h2 className='text-center font-bold text-4xl text-red-900'>ADVERTISE ITEMS</h2>
+            <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mx-5'>
                 {
-                    advertiseproduct.map(advertising => <CategoryProducs
+                    advertiseproduct.map(advertising => <AdvertiseProductList
                         key={advertising._id}
                         product={advertising}
                         setData={setData}
 
-                    ></CategoryProducs>)
+                    ></AdvertiseProductList>)
                 }
 
             </div>

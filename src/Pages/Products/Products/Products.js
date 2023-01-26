@@ -15,7 +15,7 @@ const Products = () => {
 
     console.log(products);
     return (
-        <div className='grid gap-6 grid-cols-1 ml-4 md:grid-cols-2 lg:grid-cols-3 mt-12'>
+        <div className='grid grid-cols-1'>
 
             {
                 products.map(product => <CategoryProducs

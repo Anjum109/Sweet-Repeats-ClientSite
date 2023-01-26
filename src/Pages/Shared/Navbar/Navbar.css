@@ -1,0 +1,15 @@
+.sweet {
+    font-family: 'Anton', sans-serif;
+    font-weight: bolder;
+}
+
+.sweet:hover {
+    background-color: rgb(123, 77, 77);
+    color: wheat;
+    padding: 15px;
+}
+
+.items:hover {
+    background-color: rgb(123, 77, 77);
+    color: wheat;
+}

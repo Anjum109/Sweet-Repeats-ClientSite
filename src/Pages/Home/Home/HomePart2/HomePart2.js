@@ -5,7 +5,7 @@ import image from '../../../../assets/images/home/cooking-gadgets-vl-2x1-211223_
 const HomePart2 = () => {
     return (
 
-        <div className="bg-base-200 mt-12">
+        <div className="bg-base-200 mt-12 mb-6">
             <div className="flex flex-col lg:flex-row p-12">
                 <img src={image} alt="" className="max-w-sm rounded-lg shadow-2xl" />
                 <div className='lg:ml-12 lg:mt-5 sm:mt-12'>
