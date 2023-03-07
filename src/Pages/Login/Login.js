@@ -70,18 +70,18 @@ const Login = () => {
                                 <input type="email" name='email' placeholder="email" className="input input-bordered border border-red-900" required />
                             </div>
                             <div className="form-control">
-                                <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+                                <input type="text" name='password' placeholder="password" className="input input-bordered border border-red-900" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn border border-red-900 hover:bg-red-900 text-red-900 hover:text-white" type="submit" value="Login" />
+                                <input className=" border border-red-900 rounded-xl p-3 font-bold border-red-900 bg-red-900 text-white hover:bg-red-300 hover:text-red-900" type="submit" value="Login" />
                             </div>
                         </form>
                         <p className='text-center'>Have an new account <Link className=' font-bold text-orange-500' to={'/signup'}>Registration</Link></p>
-                        <div className="ml-12">
-                            <button onClick={handleGoogle} className='btn bg-red-900 text-white mt-4 w-4/6  mx-5'> Google Login</button>
+                        <div className="px-5 mt-5">
+                            <button onClick={handleGoogle} className='border border-red-900 rounded-xl p-3 font-bold border-red-900 mr-3 w-full bg-red-900 text-white hover:bg-red-300 hover:text-red-900 '> Google Login</button>
                         </div>
                     </div>
 

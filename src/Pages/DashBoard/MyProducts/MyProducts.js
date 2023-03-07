@@ -35,14 +35,6 @@ const MyProducts = () => {
             })
     }
 
-    // useEffect(() => {
-    //     const url = `https://sweet-repeates-server.vercel.app/addproducts?email=${user?.email}`
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setMyProduct(data)
-    //         })
-    // }, [user?.email])
 
 
 

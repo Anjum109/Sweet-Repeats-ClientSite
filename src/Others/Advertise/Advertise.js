@@ -1,4 +1,4 @@
-
+import { motion } from "framer-motion"
 import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
 import { useState } from 'react';
@@ -28,7 +28,18 @@ const Advertise = () => {
     })
     return (
         <div className='mt-12'>
-            <h2 className='text-center font-bold text-4xl text-red-900'>ADVERTISE ITEMS</h2>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.7 }}
+                variants={{
+                    hidden: { opacity: 0, x: 50 },
+                    visible: { opacity: 1, x: 0 },
+                }}
+                className="flex justify-center w-full"
+            >
+                <h2 className='text-center font-bold text-4xl text-red-900'>ADVERTISE ITEMS</h2></motion.div>
             <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mx-5'>
                 {
                     advertiseproduct.map(advertising => <AdvertiseProductList

@@ -178,13 +178,13 @@ const SignUp = () => {
                                             <p className="text-success text-2xl">User created successfully</p>
                                         )}
                                         <div className='flex justify-center'>
-                                            <button className="btn border bg-red-900 border-t-orange-900 w-1/2 text-white">SignIn</button>
+                                            <button className=" border border-red-900 rounded-xl p-3 font-bold border-red-900 bg-red-900 text-white hover:bg-red-300 hover:text-red-900 w-full">SignIn</button>
                                         </div>
                                     </div>
                                 </form>
                                 <p className='text-center mb-12'>All ready have an account <Link to={'/login'} className=' font-bold text-orange-500'>Login</Link></p>
-                                <div className='flex items-center justify-center'>
-                                    <p onClick={handleGoogle} className='btn border border-white bg-red-900 w-1/2 border-white text-center mb-12 p-5 text-1xl shadow-xl shadow-slate-300'>  Login with Google</p>
+                                <div className='flex items-center justify-center mx-5'>
+                                    <p onClick={handleGoogle} className=' border border-red-900 rounded-xl p-3 font-bold border-red-900 bg-red-900 text-white hover:bg-red-300 hover:text-red-900 mb-5 w-full text-center'>  Login with Google</p>
                                 </div>
                             </div>
 

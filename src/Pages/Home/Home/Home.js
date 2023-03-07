@@ -1,6 +1,7 @@
 import React from 'react';
 import useTitle from '../../../hooks/useTitle.js/useTitle';
 import Advertise from '../../../Others/Advertise/Advertise';
+import Contact from '../Contact/Contact';
 import Banner from './Banner/Banner';
 import Categories from './Categories/Categories';
 import DiscountBanner from './DiscountBanner/DiscountBanner';
@@ -17,6 +18,7 @@ const Home = () => {
             <HomePart2></HomePart2>
 
             <Homepart3></Homepart3>
+            <Contact></Contact>
         </div>
     );
 };

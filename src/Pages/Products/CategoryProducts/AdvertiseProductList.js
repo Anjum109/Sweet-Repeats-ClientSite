@@ -1,7 +1,7 @@
 import React from 'react';
 import toast from 'react-hot-toast';
 import './advertise.css'
-
+import { motion } from "framer-motion";
 const AdvertiseProductList = ({ product, setData }) => {
     const { description, image, location, advertising, original_price, posted_time, condition_type, product_name, resale_price, seller_name, years_of_use, _id } = product;
 
@@ -22,32 +22,43 @@ const AdvertiseProductList = ({ product, setData }) => {
             <div>
                 <div className="container">
 
-                    <div className="card-card">
-                        <div className="card__image-container">
-                            <img className="card__image" src={image} alt="" />
-                        </div>
-                        <div className="card__content">
-                            <h1 className="card__title text-center text-xl text-bold mb-1">{product_name}</h1>
-                            <h1 className="card__title">Seller Name: {seller_name}</h1>
-                            <h2 className="">Original Price: <strong>{original_price}$</strong></h2>
-                            <h2 className="">Reseal Price: <strong> {resale_price}$</strong></h2>
-                        </div>
-                        <div className=" flex card-actions justify-between mt-5">
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 0.7 }}
+                        variants={{
+                            hidden: { opacity: 0, y: 50 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                        className="basis-1/2 flex justify-center"
+                    >
+                        <div className="card-card p-5">
+                            <div className="card__image-container flex w-full h-72">
+                                <img className="card__image w-full border image-radius" src={image} alt="" />
+                            </div>
+                            <div className="card__content">
+                                <h1 className="card__title text-center text-xl text-bold mb-1">{product_name}</h1>
+                                <h1 className="card__title">Seller Name: {seller_name}</h1>
+                                <h2 className="">Original Price: <strong>{original_price}$</strong></h2>
+                                <h2 className="">Reseal Price: <strong> {resale_price}$</strong></h2>
+                            </div>
+                            <div className=" flex card-actions justify-between my-5">
 
-                            <div>
-                                <label
-                                    onClick={() => setData(product)}
-                                    htmlFor="booking-modal"
-                                    className="button btn border-white shadow-xl shadow-slate-400 w-full bg-white text-black p-5">Book now  </label>
+                                <div>
+                                    <label
+                                        onClick={() => setData(product)}
+                                        htmlFor="booking-modal"
+                                        className=" border-white shadow-xl shadow-slate-400 rounded-xl w-full bg-red-900 text-red-100 p-3 hover:p-4 hover:bg-red-300 hover:text-red-900 font-bold">Book now  </label>
+                                </div>
+                                <div>
+                                    <label
+                                        onClick={() => handleReport(_id)}
+                                        htmlFor="booking-modal"
+                                        className=" border-white shadow-xl shadow-slate-400 w-full bg-red-900 text-red-100 text-red-100 p-3 rounded-xl hover:p-4 hover:bg-red-300 hover:text-red-900 font-bold">Report</label>
+                                </div>
                             </div>
-                            <div>
-                                <label
-                                    onClick={() => handleReport(_id)}
-                                    htmlFor="booking-modal"
-                                    className="button btn border-white shadow-xl shadow-slate-400 w-full bg-white text-black">Report</label>
-                            </div>
-                        </div>
-                    </div>
+                        </div></motion.div>
                 </div>
             </div>
             {/* new design end */}
